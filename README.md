@@ -32,3 +32,61 @@ Have it supplied as a parameter. The app can provide these dependencies when the
 
 
 There are 3 types of Dependency Injections.
+
+**Constructor Injection:**
+
+Constructor injection involves providing dependencies through a class's constructor. Dependencies are passed as parameters to the constructor, ensuring that the class has access to all the required dependencies when it's instantiated. Here's an example:
+
+
+class MyClass(private val dependency: Dependency) {
+
+    // Class implementation
+    
+}
+
+In this example, MyClass depends on an instance of Dependency, which is provided through the constructor.
+
+
+
+**Property/Field Injection:**
+
+Property or field injection involves injecting dependencies by assigning them directly to properties or fields in a class. This is typically achieved using the lateinit keyword or nullable types. Here's an example:
+
+
+class MyClass {
+
+    @Inject
+    
+    lateinit var dependency: Dependency
+    
+    // Class implementation
+    
+}
+
+In this example, the dependency property is marked with the @Inject annotation, indicating that it should be injected with an instance of Dependency.
+
+
+
+**Method Injection:**
+
+Method injection involves providing dependencies through methods in a class. Dependencies are passed as parameters to the methods, allowing them to be set after an object is constructed. Here's an example:
+
+
+class MyClass {
+
+    private lateinit var dependency: Dependency
+    
+    @Inject
+    
+    fun setDependency(dependency: Dependency) {
+    
+        this.dependency = dependency
+        
+    }
+    
+    // Class implementation
+    
+}
+
+In this example, the setDependency method is marked with the @Inject annotation and is used to set the dependency property after the object is constructed.
+
