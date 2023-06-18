@@ -30,6 +30,9 @@ The class constructs the dependency it needs. In the example above, Car would cr
 Grab it from somewhere else. Some Android APIs, such as Context getters and getSystemService(), work this way.
 Have it supplied as a parameter. The app can provide these dependencies when the class is constructed or pass them in to the functions that need each dependency. In the example above, the Car constructor would receive Engine as a parameter.
 
+![car di example](https://github.com/Vijaya9418/Dependency-Injection/assets/56352158/7120899e-dfe4-4b3e-ba91-55e2bcf586ad)
+
+
 
 There are 3 types of Dependency Injections.
 
